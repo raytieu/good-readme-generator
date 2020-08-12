@@ -1,6 +1,8 @@
+// Packages needed in this project
 const inquirer = require("inquirer");
 const fs = require("fs");
 
+// Inquirer prompts
 const questions = [
   
   {
@@ -31,7 +33,7 @@ const questions = [
   {
     type: 'input',
     name: 'installation',
-    message: "Steps to install this application:",
+    message: "How is this application installed?",
   },
   {
     type: 'input',
@@ -65,13 +67,14 @@ const questions = [
   }
 ];
 
+// Function to write README file
 function writeToFile(fileName, data) {
 
   fs.writeFileSync(fileName, "# " + data.projectTitle + '\n\n');
   fs.appendFileSync(fileName, '![' + data.projectTitle + ']' + '(https://img.shields.io/github/repo-size/' + data.username + '/' + data.repoName + ')\n\n');
   fs.appendFileSync(fileName, "## Table of Contents" + '\n\n' + "* " + data.tableOfContents.split(" ").join("\n* ") + '\n\n');
   fs.appendFileSync(fileName, "## Description" + '\n\n' + data.description + '\n\n');
-  fs.appendFileSync(fileName, "## Installation" + '\n\n' + "* " + data.installation.split(" ").join("\n* ") + '\n\n');
+  fs.appendFileSync(fileName, "## Installation" + '\n\n' + data.installation + '\n\n');
   fs.appendFileSync(fileName, "## Usage" + '\n\n' + data.usage + '\n\n');
   fs.appendFileSync(fileName, "## License" + '\n\n' + data.license + '\n\n');
   fs.appendFileSync(fileName, "## Contributing" + '\n\n' + data.contributing + '\n\n');
@@ -82,11 +85,12 @@ function writeToFile(fileName, data) {
 
 }
 
+// Function to initialize inquirer to write the README file
 function init() {
 
   inquirer.prompt(questions)
   .then(function(data) {
-    writeToFile("TEST.md", data);
+    writeToFile("README.md", data);
   });
 
 }
