@@ -1,2 +1,41 @@
-# good-readme-generator
-UCI Coding Bootcamp, HW 9: Good README Generator; Due 8/12/2020
+# good readme generator
+
+![good readme generator](https://img.shields.io/github/repo-size/raytieu/good-readme-generator)
+
+## Table of Contents
+
+* test
+* test
+* test
+
+## Description
+
+
+
+## Installation
+
+* test
+* test
+* test
+
+## Usage
+
+
+
+## License
+
+
+
+## Contributing
+
+
+
+## Tests
+
+
+
+## Contact
+
+![Profile Picture](profile-pic.jpg)
+
+E-mail: ray.tieu@gmail.com
