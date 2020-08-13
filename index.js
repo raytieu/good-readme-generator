@@ -70,15 +70,34 @@ const questions = [
 // Function to write README file
 function writeToFile(fileName, data) {
 
+  // Project Title
   fs.writeFileSync(fileName, "# " + data.projectTitle + '\n\n');
+
+  // Badge
   fs.appendFileSync(fileName, '![' + data.projectTitle + ']' + '(https://img.shields.io/github/repo-size/' + data.username + '/' + data.repoName + ')\n\n');
+
+  // Table of Contents
   fs.appendFileSync(fileName, "## Table of Contents" + '\n\n' + "* " + data.tableOfContents.split(" ").join("\n* ") + '\n\n');
+
+  // Description
   fs.appendFileSync(fileName, "## Description" + '\n\n' + data.description + '\n\n');
+
+  // Installation
   fs.appendFileSync(fileName, "## Installation" + '\n\n' + data.installation + '\n\n');
+
+  // Usage
   fs.appendFileSync(fileName, "## Usage" + '\n\n' + data.usage + '\n\n');
+
+  // License
   fs.appendFileSync(fileName, "## License" + '\n\n' + data.license + '\n\n');
+
+  // Contributing
   fs.appendFileSync(fileName, "## Contributing" + '\n\n' + data.contributing + '\n\n');
+
+  // Tests
   fs.appendFileSync(fileName, "## Tests" + '\n\n' + data.tests + '\n\n');
+
+  // Contact (Profile Picture and E-mail)
   fs.appendFileSync(fileName, "## Contact" + '\n\n' + '![Profile Picture](' + data.questionsPic + ')\n\nE-mail: ' + data.questionsEmail);
 
   console.log("Success!");
@@ -90,7 +109,7 @@ function init() {
 
   inquirer.prompt(questions)
   .then(function(data) {
-    writeToFile("README.md", data);
+    writeToFile("TEST.md", data);
   });
 
 }
